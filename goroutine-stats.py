@@ -18,8 +18,10 @@ def main():
     results = do_work(outfile)
     print('')
     for x in results:
-        print("%s: " %x)
-        #print results[x]
+        total = 0
+        for (k,v) in results[x].items():
+            total += v
+        print("%s (%d): " %(x,total))
         for (k,v) in results[x].items():
             print ("\t %s: %d" %(k,v))
 
