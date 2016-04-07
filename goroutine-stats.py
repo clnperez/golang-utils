@@ -16,14 +16,15 @@ def main():
         return
 
     results = do_work(outfile)
-    print('')
     for x in results:
         total = 0
-        for (k,v) in results[x].items():
+        for v in results[x].values():
             total += v
         print("%s (%d): " %(x,total))
+        print("   Created by:")
         for (k,v) in results[x].items():
-            print ("\t %s: %d" %(k,v))
+            print ("\t%s: %d" %(k,v))
+        print("")
 
 
 def do_work(outfile):
